@@ -1,0 +1,26 @@
+{
+  "name": "p3-fend",
+  "version": "1.0.0",
+  "description": "P3: Online Resumen is the project Nº3 for the Udacity FRONT-END Nanodegree ",
+  "main": "resumeBuilder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanHenriquez/frontend-nanodegree-resume.git"
+  },
+  "author": "Juan Henriquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanHenriquez/frontend-nanodegree-resume/issues"
+  },
+  "homepage": "https://github.com/JuanHenriquez/frontend-nanodegree-resume#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3"
+  }
+}

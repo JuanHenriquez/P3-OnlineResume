@@ -1,0 +1,22 @@
+{
+  "name": "P3: Online Resumen",
+  "homepage": "https://github.com/JuanHenriquez/frontend-nanodegree-resume",
+  "authors": [
+    "Juan Henriquez <juanhenriquezzavarse18@gmail.com>"
+  ],
+  "description": "Project Nº3 for the FRON-END Nanodegree by Udacity.",
+  "main": "resumeBuilder.js",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.5",
+    "shufflejs": "^3.1.1"
+  }
+}
