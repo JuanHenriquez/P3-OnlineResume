@@ -20,24 +20,27 @@ var bio = {
     "role": "Front-End Developer",
     "contacts": {
         "email": "juanhenriquezzavarse18@gmail.com",
-        "tel": "0412-042-3397",
+        "mobile": "0412-042-3397",
         "github": ["JuanHenriquez", "https://github.com/JuanHenriquez"],
         "twitter": ["@__juanhenriquez", "https://twitter.com/__juanhenriquez"],
         "google+": ["JuanHenriquez18", "https://plus.google.com/+JuanHenriquez18"],
         "location": "Urb Aguamarina ,Carabobo, Venezuela"
     },
-    "picturerUrl": "images/perfil.jpg",
-    "message": "Hello I'm Juan Henriquez, Fron-End Developer from Venezuela :)",
+    "bioPic": "images/perfil.jpg",
+    "welcomeMessage": "Hello I'm Juan Henriquez, Fron-End Developer from Venezuela :)",
     "skills": ["HTML", "CSS", "JavaScript", "JQuery", "Angular.js", "Web Design", "Java", "Ruby", "Python", "C++", "Visual Basic"]
 };
 
 
 bio.display = function(){
-    var formattedName     = HTMLheaderName.replace('%data%', bio.name),
-        formattedInfoName = HTMLheaderInfoName.replace('%data%', bio.name),
-        formattedRole     = HTMLheaderInfoRole.replace('%data%', bio.role),
-        formattedMessage  = HTMLheaderInfoMessage.replace('%data%', bio.message),
-        displayPicture    = HTMLbioPic.replace('%data%', bio.picturerUrl);
+
+    var data = "%data%"
+
+    var formattedName     = HTMLheaderName.replace(data, bio.name),
+        formattedInfoName = HTMLheaderInfoName.replace(data, bio.name),
+        formattedRole     = HTMLheaderInfoRole.replace(data, bio.role),
+        formattedMessage  = HTMLheaderInfoMessage.replace(data, bio.welcomeMessage),
+        displayPicture    = HTMLbioPic.replace(data, bio.bioPic);
 
 
     $('#bio-pic').append(displayPicture);
@@ -70,7 +73,7 @@ bio.display = function(){
                 $('#contact-links-container').append(contactItem);
             }
         }
-    };
+    }
 
 
     //Iterate over skills array.
@@ -87,8 +90,7 @@ bio.display = function(){
 // Work Object:
 
 var work = {
-    "jobs": [
-        {
+    "jobs": [{
             "employer": "Fiverr",
             "title": "Freelancer",
             "location": "Guacara, Ciudad Alianza",
@@ -113,13 +115,12 @@ work.display = function(){
 
 // Project Object.
 
-var project = {
-    "projects": [
-        {
+var projects = {
+    "projects": [{
             "title": "P2: Build a Portfolio",
-            "dates": 2016,
+            "dates": "2016",
             "description": "Developed a personal portfolio page using HTML, CSS, and the Materialize framework. The page is fully responsive and works on mobile, tablet, and desktop browsers.",
-            "picture": [
+            "images": [
                 "images/projectP2.png"
             ],
             "url": "https://github.com/JuanHenriquez/P2-BuildPortfolio",
@@ -129,18 +130,18 @@ var project = {
     ]
 };
 
-project.display = function(){
+projects.display = function(){
 
     var formattedProject;
 
-    project.projects.forEach(function(project){
+    projects.projects.forEach(function(project){
         formattedProject = HTMLprojectStart.replace('%dataTitle%', project.title)
                                            .replace('%dataTitle%', project.title)
                                            .replace('%dataCategory%', project.category)
                                            .replace('%dataLink%', project.url)
                                            .replace('%dataLinkDescription%', project.urlDescription)
                                            .replace('%dataDescription%', project.description)
-                                           .replace('%dataPicture%', project.picture[0]);
+                                           .replace('%dataPicture%', project.images[0]);
 
         portfolio_container.prepend(formattedProject);
 
@@ -151,22 +152,28 @@ project.display = function(){
 
 // Education Object.
 var education = {
-    "schools": [
-        {
+    "schools": [{
             "name": 'Unidad Educativa "Los Pinos"',
             "location": "Guacara, Piedra Pintada",
             "degree": "General High School",
-            "dates": "2008 - 2013"
+            "majors": [
+                'JavaScript Engineer'
+            ],
+            "dates": "2008 - 2013",
+            "url": "#"
         },
         {
             "name": "Universidad Jose Antonio Paez",
             "location": "Universidad Jose Antonio Paez",
             "degree": "Computer Engineer",
-            "dates": "2013 - Present"
+            "majors": [
+                'Artificial Intelligence'
+            ],
+            "dates": "2013 - Present",
+            "url": "#"
         }
     ],
-    "onlineCourses": [
-        {
+    "onlineCourses": [{
             "title": "Udacity FRONT-END Nanodegree",
             "school": "Udacity",
             "date": "2016 - Present",
@@ -197,8 +204,13 @@ education.display = function(){
         formattedEducation = HTMLschoolStart.replace('%dataName%', school.name)
                                             .replace('%dataDegree%', school.degree)
                                             .replace('%dataDates%', school.dates)
-                                            .replace('%dataLocation%', school.location);
+                                            .replace('%dataLocation%', school.location)
+                                            .replace('%dataLink%', school.url);
         $('#carousel-education').append(formattedEducation);
+
+        school.majors.forEach(function(major){
+            $('#education .card:last .majors-list').append('<li>' + major + '</li>');
+        });
     });
 
     education.onlineCourses.forEach(function(course){
@@ -216,7 +228,7 @@ education.display = function(){
 // Render the sections.
 bio.display();
 work.display();
-project.display();
+projects.display();
 education.display();
 
 
