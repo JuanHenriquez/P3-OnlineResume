@@ -168,6 +168,11 @@ nav {
     color: #cecece; }
   .education-information #carousel-education .card-action p {
     margin: 0; }
+  .education-information #carousel-education .majors-list {
+    margin: 0; }
+  .education-information #carousel-education .majors-list li {
+    font-weight: bold;
+    font-style: italic; }
   .education-information #carousel-education-online .card-title {
     font-size: 28px;
     font-weight: bold;
