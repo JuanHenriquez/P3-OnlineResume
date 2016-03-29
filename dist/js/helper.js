@@ -49,10 +49,13 @@ var HTMLschoolStart = '<div class="col s12">';
     HTMLschoolStart += '<div class="card-content">';
     HTMLschoolStart += '<h4 class="card-title">%dataName%</h4>';
     HTMLschoolStart += '<h5>%dataDegree%</h5>'
+    HTMLschoolStart += '<p class="major-title">Majors:</p>'
+    HTMLschoolStart += '<ul class="majors-list"></ul>'
     HTMLschoolStart += '</div>';
     HTMLschoolStart += '<div class="card-action">';
     HTMLschoolStart += '<p>%dataDates%</p>';
     HTMLschoolStart += '<p>%dataLocation%</p>';
+    HTMLschoolStart += '<a href="%dataLink%">Url Website</a>'
     HTMLschoolStart += '</div></div></div>';
 
 var HTMLonlineStart = '<div class="col s12">';
